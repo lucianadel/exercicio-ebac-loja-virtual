@@ -1,40 +1,70 @@
 /* Estilo geral */
+
 body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f5f5f5;
+    color: #333;
 }
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+}
+
+
+/* Cabeçalho */
 
 header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+    background-color: #00008B;
+    padding: 8px 0;
+    color: #FFFF00;
 }
 
-h1 {
+/* Aqui é o que faz o menu ficar separado em direita e esquerda */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
     margin: 0;
+    padding: 0;
 }
 
-nav {
-    /* Estilos para links de navegação */
+nav li {
+    display: inline;
+    margin-right: 20px;
 }
 
-main {
-    padding: 20px;
+nav a {
+    text-decoration: none;
+    color: #FFFF00;
+
 }
+
+/* Seção Sobre Loja */
 
 #sobre-loja {
+    background-color: #B0E0E6;
+    padding: 40px 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    /* Usar flexbox para posicionar os elementos lado a lado */
+    flex-direction: column;
+    /* Organizar os elementos verticalmente */
+    align-items: center;
+    /* Centralizar os elementos horizontalmente */
 }
 
 .imagem-loja {
-    flex: 1 0 40%;
-    /* Define a largura da imagem */
-    text-align: center;
+    width: 50%;
+    margin-bottom: 40px;
+    flex: 1;
 }
 
 .imagem-loja img {
@@ -43,16 +73,42 @@ main {
 }
 
 .texto-loja {
-    flex: 1 0 60%;
-    /* Define a largura do texto */
+    width: 50%;
+    text-align: left;
+    /* Alinhar o texto à esquerda */
 }
 
-h2 {
-    margin-top: 0;
+.texto-loja h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin: 25px;
+}
+
+.texto-loja p {
+    font-size: 16px;
+    line-height: 1.5;
+    float: left;
+    flex: 1;
+    margin: 25px;
 }
 
 #produtos {
-    margin-top: 40px;
+    background-color: #fff;
+    padding: 40px 0;
+
+}
+
+#produtos h2 {
+    color: purple;
+    display: flex;
+    justify-content: left;
+    padding-left: 16rem;
+
+}
+
+#produtos {
+    display: flex;
+    flex-direction: column;
 }
 
 .lista-produtos {
@@ -62,47 +118,79 @@ h2 {
 }
 
 .produto {
-    width: calc(25% - 20px);
-    /* Define a largura de cada produto */
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 24%;
+    margin-bottom: 40px;
+    text-align: center;
+
 }
 
 .produto img {
     width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .produto h3 {
-    margin: 0;
-}
-
-.produto p {
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
-.button {
-    display: block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
+.produto p {
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
-/* Adaptações para telas menores */
+.produto button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    /* Remover foco visível do botão */
+}
+
+/* Rodapé */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Layout responsivo */
+
 @media (max-width: 768px) {
     #sobre-loja {
-        flex-direction: column;
+        flex-direction: row;
+        /* Mudar para layout em linha quando a tela for menor */
     }
 
-    .imagem-loja, .texto-loja {
+    .imagem-loja,
+    .texto-loja {
         width: 100%;
+        margin-bottom: 40px;
     }
 
     .lista-produtos {
@@ -110,6 +198,7 @@ h2 {
     }
 
     .produto {
-        width: 100%;
+        width: 50%;
+        margin-bottom: 20px;
     }
 }
