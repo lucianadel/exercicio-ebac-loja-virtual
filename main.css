@@ -1,5 +1,4 @@
 /* Estilo geral */
-
 body {
     font-family: sans-serif;
     margin: 0;
@@ -14,7 +13,6 @@ body {
     padding: 20px;
     display: flex;
 }
-
 
 /* Cabeçalho */
 
@@ -45,7 +43,6 @@ nav li {
 nav a {
     text-decoration: none;
     color: #FFFF00;
-
 }
 
 /* Seção Sobre Loja */
@@ -55,10 +52,7 @@ nav a {
     padding: 40px 0;
     display: flex;
     /* Usar flexbox para posicionar os elementos lado a lado */
-    flex-direction: column;
-    /* Organizar os elementos verticalmente */
-    align-items: center;
-    /* Centralizar os elementos horizontalmente */
+    flex-wrap: wrap;
 }
 
 .imagem-loja {
@@ -82,20 +76,21 @@ nav a {
     font-size: 24px;
     margin-bottom: 20px;
     margin: 25px;
+    width: 50%;
+    text-align: left;
 }
 
 .texto-loja p {
     font-size: 16px;
     line-height: 1.5;
-    float: left;
-    flex: 1;
     margin: 25px;
 }
+
+/* Produtos */
 
 #produtos {
     background-color: #fff;
     padding: 40px 0;
-
 }
 
 #produtos h2 {
@@ -103,7 +98,6 @@ nav a {
     display: flex;
     justify-content: left;
     padding-left: 16rem;
-
 }
 
 #produtos {
@@ -121,7 +115,6 @@ nav a {
     width: 24%;
     margin-bottom: 40px;
     text-align: center;
-
 }
 
 .produto img {
@@ -153,10 +146,11 @@ nav a {
 /* Rodapé */
 
 footer {
-    background-color: #333;
+    background-color: #00008B;
     color: #fff;
     padding: 20px 0;
     text-align: center;
+
 }
 
 footer p {
@@ -179,26 +173,68 @@ footer a {
     text-decoration: none;
 }
 
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* Layout responsivo */
-
-@media (max-width: 768px) {
+/* Layout Tablet (de 641px até 1023px) e MOBILE da parte SOBRE A LOJA*/
+@media (max-width: 1023px) {
     #sobre-loja {
-        flex-direction: row;
-        /* Mudar para layout em linha quando a tela for menor */
-    }
-
-    .imagem-loja,
-    .texto-loja {
-        width: 100%;
-        margin-bottom: 40px;
-    }
-
-    .lista-produtos {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .produto {
-        width: 50%;
-        margin-bottom: 20px;
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagem-loja img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .texto-loja {
+        margin-top: 20px;
+        width: 60%;
+    }
+
+    #produtos h2 {
+        .item {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Compensa o deslocamento do posicionamento absoluto */
+            /* Estilos do item */
+        }
+    }
+}
+
+/* Layout Tablet (de 641px até 1023px) PARTE DE PRODUTOS*/
+@media (min-width: 641px) and (max-width: 1023px) {
+    .grid-tablet {
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        padding-left: 20%;
+        padding-right: 20%;
+
+    }
+}
+
+
+/* Layout Mobile (até 640px): PARTE DE PRODUTOS*/
+@media (max-width: 640px) {
+    .grid-tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
