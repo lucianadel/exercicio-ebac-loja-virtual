@@ -1,5 +1,4 @@
-/* Estilo geral */
-body {
+Estilo geral body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
@@ -15,12 +14,12 @@ body {
 }
 
 /* Cabeçalho */
-
 header {
     background-color: #00008B;
     padding: 8px 0;
-    color: #FFFF00;
+    color: #fff;
 }
+
 
 /* Aqui é o que faz o menu ficar separado em direita e esquerda */
 header .container {
@@ -40,10 +39,15 @@ nav li {
     margin-right: 20px;
 }
 
-nav a {
-    text-decoration: none;
+a:hover {
     color: #FFFF00;
 }
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
 
 /* Seção Sobre Loja */
 
@@ -89,15 +93,14 @@ nav a {
 /* Produtos */
 
 #produtos {
-    background-color: #fff;
+    background-color: rgb(236, 236, 58);
     padding: 40px 0;
 }
 
 #produtos h2 {
-    color: purple;
-    display: flex;
-    justify-content: left;
-    padding-left: 16rem;
+    color: #00008B;
+    margin-left: 50px;
+
 }
 
 #produtos {
@@ -134,7 +137,7 @@ nav a {
 }
 
 .produto button {
-    background-color: #007bff;
+    background-color: #00008B;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -142,6 +145,11 @@ nav a {
     outline: none;
     /* Remover foco visível do botão */
 }
+
+button:hover {
+    color: #FFFF00;
+}
+
 
 /* Rodapé */
 
@@ -204,37 +212,29 @@ footer .container {
         margin-top: 20px;
         width: 60%;
     }
-
-    #produtos h2 {
-        .item {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            /* Compensa o deslocamento do posicionamento absoluto */
-            /* Estilos do item */
-        }
-    }
 }
 
-/* Layout Tablet (de 641px até 1023px) PARTE DE PRODUTOS*/
 @media (min-width: 641px) and (max-width: 1023px) {
-    .grid-tablet {
-        display: flex;
-        grid-template-columns: 1fr 1fr;
-        justify-content: space-between;
-        padding-left: 20%;
-        padding-right: 20%;
+    .lista-produtos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 
+    .produto {
+        width: 80%;
     }
 }
-
 
 /* Layout Mobile (até 640px): PARTE DE PRODUTOS*/
 @media (max-width: 640px) {
-    .grid-tablet {
+    .lista-produtos {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .produto {
+        width: 70%;
     }
 }
